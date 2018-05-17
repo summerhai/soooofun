@@ -1,0 +1,485 @@
+[DEBUG] [2018-05-17 21:11:12][us.codecraft.webmagic.scheduler.QueueScheduler]push to queue https://github.com/code4craft
+  [INFO] [2018-05-17 21:11:12][us.codecraft.webmagic.Spider]Spider github.com started!
+  [DEBUG] [2018-05-17 21:11:12][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: standard
+  [DEBUG] [2018-05-17 21:11:12][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+  [DEBUG] [2018-05-17 21:11:12][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [DEBUG] [2018-05-17 21:11:12][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 5]
+  [DEBUG] [2018-05-17 21:11:12][org.apache.http.impl.execchain.MainClientExec]Opening connection {s}->https://github.com:443
+  [DEBUG] [2018-05-17 21:11:12][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to github.com/192.30.253.112:443
+  [DEBUG] [2018-05-17 21:11:12][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Connecting socket to github.com/192.30.253.112:443 with timeout 10000
+  [DEBUG] [2018-05-17 21:11:13][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled protocols: [TLSv1]
+  [DEBUG] [2018-05-17 21:11:13][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+  [DEBUG] [2018-05-17 21:11:13][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Starting handshake
+  [DEBUG] [2018-05-17 21:11:13][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: Shutdown connection
+  [DEBUG] [2018-05-17 21:11:13][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+  [DEBUG] [2018-05-17 21:11:13][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [WARN] [2018-05-17 21:11:13][us.codecraft.webmagic.downloader.HttpClientDownloader]download page https://github.com/code4craft error
+  javax.net.ssl.SSLException: Received fatal alert: protocol_version
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:154)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(SSLSocketImpl.java:2033)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1135)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:394)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:353)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[INFO] [2018-05-17 21:11:14][us.codecraft.webmagic.Spider]Spider github.com closed! 1 pages downloaded.
+  [DEBUG] [2018-05-17 21:18:02][us.codecraft.webmagic.scheduler.QueueScheduler]push to queue https://github.com/code4craft
+  [INFO] [2018-05-17 21:18:02][us.codecraft.webmagic.Spider]Spider github.com started!
+  [DEBUG] [2018-05-17 21:18:02][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: standard
+  [DEBUG] [2018-05-17 21:18:02][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+  [DEBUG] [2018-05-17 21:18:02][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [DEBUG] [2018-05-17 21:18:02][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 5]
+  [DEBUG] [2018-05-17 21:18:02][org.apache.http.impl.execchain.MainClientExec]Opening connection {s}->https://github.com:443
+  [DEBUG] [2018-05-17 21:18:02][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to github.com/192.30.253.112:443
+  [DEBUG] [2018-05-17 21:18:02][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Connecting socket to github.com/192.30.253.112:443 with timeout 10000
+  [DEBUG] [2018-05-17 21:18:03][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled protocols: [TLSv1]
+  [DEBUG] [2018-05-17 21:18:03][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+  [DEBUG] [2018-05-17 21:18:03][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Starting handshake
+  [DEBUG] [2018-05-17 21:18:03][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: Shutdown connection
+  [DEBUG] [2018-05-17 21:18:03][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+  [DEBUG] [2018-05-17 21:18:03][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [WARN] [2018-05-17 21:18:03][us.codecraft.webmagic.downloader.HttpClientDownloader]download page https://github.com/code4craft error
+  javax.net.ssl.SSLException: Received fatal alert: protocol_version
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:154)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(SSLSocketImpl.java:2033)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1135)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:394)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:353)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[INFO] [2018-05-17 21:18:04][us.codecraft.webmagic.Spider]Spider github.com closed! 1 pages downloaded.
+  [DEBUG] [2018-05-17 21:19:02][us.codecraft.webmagic.scheduler.QueueScheduler]push to queue https://github.com/code4craft
+  [INFO] [2018-05-17 21:19:03][us.codecraft.webmagic.Spider]Spider github.com started!
+  [DEBUG] [2018-05-17 21:19:03][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: standard
+  [DEBUG] [2018-05-17 21:19:03][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+  [DEBUG] [2018-05-17 21:19:03][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [DEBUG] [2018-05-17 21:19:03][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 5]
+  [DEBUG] [2018-05-17 21:19:03][org.apache.http.impl.execchain.MainClientExec]Opening connection {s}->https://github.com:443
+  [DEBUG] [2018-05-17 21:19:03][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to github.com/192.30.253.112:443
+  [DEBUG] [2018-05-17 21:19:03][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Connecting socket to github.com/192.30.253.112:443 with timeout 10000
+  [DEBUG] [2018-05-17 21:19:03][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled protocols: [TLSv1]
+  [DEBUG] [2018-05-17 21:19:03][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+  [DEBUG] [2018-05-17 21:19:03][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Starting handshake
+  [DEBUG] [2018-05-17 21:19:04][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: Shutdown connection
+  [DEBUG] [2018-05-17 21:19:04][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+  [DEBUG] [2018-05-17 21:19:04][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [WARN] [2018-05-17 21:19:04][us.codecraft.webmagic.downloader.HttpClientDownloader]download page https://github.com/code4craft error
+  javax.net.ssl.SSLException: Received fatal alert: protocol_version
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:154)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(SSLSocketImpl.java:2033)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1135)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:394)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:353)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[INFO] [2018-05-17 21:19:05][us.codecraft.webmagic.Spider]Spider github.com closed! 1 pages downloaded.
+  [DEBUG] [2018-05-17 21:20:50][us.codecraft.webmagic.scheduler.QueueScheduler]push to queue https://github.com/code4craft
+  [INFO] [2018-05-17 21:20:51][us.codecraft.webmagic.Spider]Spider github.com started!
+  [DEBUG] [2018-05-17 21:20:51][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: standard
+  [DEBUG] [2018-05-17 21:20:51][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+  [DEBUG] [2018-05-17 21:20:51][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [DEBUG] [2018-05-17 21:20:51][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 5]
+  [DEBUG] [2018-05-17 21:20:51][org.apache.http.impl.execchain.MainClientExec]Opening connection {s}->https://github.com:443
+  [DEBUG] [2018-05-17 21:20:51][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to github.com/192.30.253.112:443
+  [DEBUG] [2018-05-17 21:20:51][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Connecting socket to github.com/192.30.253.112:443 with timeout 10000
+  [DEBUG] [2018-05-17 21:20:51][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled protocols: [TLSv1]
+  [DEBUG] [2018-05-17 21:20:51][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+  [DEBUG] [2018-05-17 21:20:51][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Starting handshake
+  [DEBUG] [2018-05-17 21:20:52][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: Shutdown connection
+  [DEBUG] [2018-05-17 21:20:52][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+  [DEBUG] [2018-05-17 21:20:52][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [WARN] [2018-05-17 21:20:52][us.codecraft.webmagic.downloader.HttpClientDownloader]download page https://github.com/code4craft error
+  javax.net.ssl.SSLException: Received fatal alert: protocol_version
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:154)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(SSLSocketImpl.java:2033)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1135)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:394)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:353)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[INFO] [2018-05-17 21:20:53][us.codecraft.webmagic.Spider]Spider github.com closed! 1 pages downloaded.
+  [DEBUG] [2018-05-17 21:25:27][us.codecraft.webmagic.scheduler.QueueScheduler]push to queue https://github.com/code4craft
+  [INFO] [2018-05-17 21:25:27][us.codecraft.webmagic.Spider]Spider github.com started!
+  [DEBUG] [2018-05-17 21:25:27][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: standard
+  [DEBUG] [2018-05-17 21:25:27][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+  [DEBUG] [2018-05-17 21:25:27][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [DEBUG] [2018-05-17 21:25:27][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 5]
+  [DEBUG] [2018-05-17 21:25:27][org.apache.http.impl.execchain.MainClientExec]Opening connection {s}->https://github.com:443
+  [DEBUG] [2018-05-17 21:25:27][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to github.com/192.30.253.112:443
+  [DEBUG] [2018-05-17 21:25:27][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Connecting socket to github.com/192.30.253.112:443 with timeout 10000
+  [DEBUG] [2018-05-17 21:25:27][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled protocols: [TLSv1]
+  [DEBUG] [2018-05-17 21:25:27][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+  [DEBUG] [2018-05-17 21:25:27][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Starting handshake
+  [DEBUG] [2018-05-17 21:25:28][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: Shutdown connection
+  [DEBUG] [2018-05-17 21:25:28][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+  [DEBUG] [2018-05-17 21:25:28][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [WARN] [2018-05-17 21:25:28][us.codecraft.webmagic.downloader.HttpClientDownloader]download page https://github.com/code4craft error
+  javax.net.ssl.SSLException: Received fatal alert: protocol_version
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:154)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(SSLSocketImpl.java:2033)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1135)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:394)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:353)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[INFO] [2018-05-17 21:25:29][us.codecraft.webmagic.Spider]Spider github.com closed! 1 pages downloaded.
+  [DEBUG] [2018-05-17 21:25:57][us.codecraft.webmagic.scheduler.QueueScheduler]push to queue https://github.com/code4craft
+  [INFO] [2018-05-17 21:25:57][us.codecraft.webmagic.Spider]Spider github.com started!
+  [DEBUG] [2018-05-17 21:25:57][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: standard
+  [DEBUG] [2018-05-17 21:25:57][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+  [DEBUG] [2018-05-17 21:25:57][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [DEBUG] [2018-05-17 21:25:57][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 5]
+  [DEBUG] [2018-05-17 21:25:57][org.apache.http.impl.execchain.MainClientExec]Opening connection {s}->https://github.com:443
+  [DEBUG] [2018-05-17 21:25:57][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to github.com/192.30.253.112:443
+  [DEBUG] [2018-05-17 21:25:57][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Connecting socket to github.com/192.30.253.112:443 with timeout 10000
+  [DEBUG] [2018-05-17 21:25:58][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled protocols: [TLSv1]
+  [DEBUG] [2018-05-17 21:25:58][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+  [DEBUG] [2018-05-17 21:25:58][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Starting handshake
+  [DEBUG] [2018-05-17 21:25:59][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: Shutdown connection
+  [DEBUG] [2018-05-17 21:25:59][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+  [DEBUG] [2018-05-17 21:25:59][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [WARN] [2018-05-17 21:25:59][us.codecraft.webmagic.downloader.HttpClientDownloader]download page https://github.com/code4craft error
+  javax.net.ssl.SSLException: Received fatal alert: protocol_version
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:154)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(SSLSocketImpl.java:2033)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1135)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:394)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:353)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[INFO] [2018-05-17 21:26:00][us.codecraft.webmagic.Spider]Spider github.com closed! 1 pages downloaded.
+  [DEBUG] [2018-05-17 21:26:26][us.codecraft.webmagic.scheduler.QueueScheduler]push to queue https://github.com/code4craft
+  [INFO] [2018-05-17 21:26:26][us.codecraft.webmagic.Spider]Spider github.com started!
+  [DEBUG] [2018-05-17 21:26:26][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: standard
+  [DEBUG] [2018-05-17 21:26:26][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+  [DEBUG] [2018-05-17 21:26:26][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [DEBUG] [2018-05-17 21:26:26][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 5]
+  [DEBUG] [2018-05-17 21:26:26][org.apache.http.impl.execchain.MainClientExec]Opening connection {s}->https://github.com:443
+  [DEBUG] [2018-05-17 21:26:26][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to github.com/192.30.253.112:443
+  [DEBUG] [2018-05-17 21:26:26][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Connecting socket to github.com/192.30.253.112:443 with timeout 10000
+  [DEBUG] [2018-05-17 21:26:27][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled protocols: [TLSv1]
+  [DEBUG] [2018-05-17 21:26:27][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+  [DEBUG] [2018-05-17 21:26:27][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Starting handshake
+  [DEBUG] [2018-05-17 21:26:27][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: Shutdown connection
+  [DEBUG] [2018-05-17 21:26:27][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+  [DEBUG] [2018-05-17 21:26:27][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [WARN] [2018-05-17 21:26:27][us.codecraft.webmagic.downloader.HttpClientDownloader]download page https://github.com/code4craft error
+  javax.net.ssl.SSLException: Received fatal alert: protocol_version
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:154)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(SSLSocketImpl.java:2033)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1135)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:394)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:353)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[INFO] [2018-05-17 21:26:28][us.codecraft.webmagic.Spider]Spider github.com closed! 1 pages downloaded.
+  [DEBUG] [2018-05-17 21:26:35][us.codecraft.webmagic.scheduler.QueueScheduler]push to queue https://github.com/code4craft
+  [INFO] [2018-05-17 21:26:35][us.codecraft.webmagic.Spider]Spider github.com started!
+  [DEBUG] [2018-05-17 21:26:36][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: standard
+  [DEBUG] [2018-05-17 21:26:36][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+  [DEBUG] [2018-05-17 21:26:36][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [DEBUG] [2018-05-17 21:26:36][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 5]
+  [DEBUG] [2018-05-17 21:26:36][org.apache.http.impl.execchain.MainClientExec]Opening connection {s}->https://github.com:443
+  [DEBUG] [2018-05-17 21:26:36][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to github.com/192.30.253.112:443
+  [DEBUG] [2018-05-17 21:26:36][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Connecting socket to github.com/192.30.253.112:443 with timeout 10000
+  [DEBUG] [2018-05-17 21:26:36][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled protocols: [TLSv1]
+  [DEBUG] [2018-05-17 21:26:36][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+  [DEBUG] [2018-05-17 21:26:36][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Starting handshake
+  [DEBUG] [2018-05-17 21:26:36][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: Shutdown connection
+  [DEBUG] [2018-05-17 21:26:36][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+  [DEBUG] [2018-05-17 21:26:36][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [WARN] [2018-05-17 21:26:36][us.codecraft.webmagic.downloader.HttpClientDownloader]download page https://github.com/code4craft error
+  javax.net.ssl.SSLException: Received fatal alert: protocol_version
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:154)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(SSLSocketImpl.java:2033)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1135)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:394)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:353)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[INFO] [2018-05-17 21:26:37][us.codecraft.webmagic.Spider]Spider github.com closed! 1 pages downloaded.
+  [DEBUG] [2018-05-17 21:26:57][us.codecraft.webmagic.scheduler.QueueScheduler]push to queue https://github.com/code4craft
+  [INFO] [2018-05-17 21:26:57][us.codecraft.webmagic.Spider]Spider github.com started!
+  [DEBUG] [2018-05-17 21:26:57][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: standard
+  [DEBUG] [2018-05-17 21:26:57][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+  [DEBUG] [2018-05-17 21:26:57][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [DEBUG] [2018-05-17 21:26:57][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 5]
+  [DEBUG] [2018-05-17 21:26:57][org.apache.http.impl.execchain.MainClientExec]Opening connection {s}->https://github.com:443
+  [DEBUG] [2018-05-17 21:26:57][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to github.com/192.30.253.112:443
+  [DEBUG] [2018-05-17 21:26:57][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Connecting socket to github.com/192.30.253.112:443 with timeout 10000
+  [DEBUG] [2018-05-17 21:27:01][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled protocols: [TLSv1]
+  [DEBUG] [2018-05-17 21:27:01][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+  [DEBUG] [2018-05-17 21:27:01][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Starting handshake
+  [DEBUG] [2018-05-17 21:27:01][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: Shutdown connection
+  [DEBUG] [2018-05-17 21:27:01][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+  [DEBUG] [2018-05-17 21:27:01][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [WARN] [2018-05-17 21:27:01][us.codecraft.webmagic.downloader.HttpClientDownloader]download page https://github.com/code4craft error
+  javax.net.ssl.SSLException: Received fatal alert: protocol_version
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:154)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(SSLSocketImpl.java:2033)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1135)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:394)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:353)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[INFO] [2018-05-17 21:27:02][us.codecraft.webmagic.Spider]Spider github.com closed! 1 pages downloaded.
+  [DEBUG] [2018-05-17 21:27:12][us.codecraft.webmagic.scheduler.QueueScheduler]push to queue https://github.com/code4craft
+  [INFO] [2018-05-17 21:27:12][us.codecraft.webmagic.Spider]Spider github.com started!
+  [DEBUG] [2018-05-17 21:27:12][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: standard
+  [DEBUG] [2018-05-17 21:27:12][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+  [DEBUG] [2018-05-17 21:27:12][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [DEBUG] [2018-05-17 21:27:12][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 5]
+  [DEBUG] [2018-05-17 21:27:12][org.apache.http.impl.execchain.MainClientExec]Opening connection {s}->https://github.com:443
+  [DEBUG] [2018-05-17 21:27:12][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to github.com/192.30.253.112:443
+  [DEBUG] [2018-05-17 21:27:12][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Connecting socket to github.com/192.30.253.112:443 with timeout 10000
+  [DEBUG] [2018-05-17 21:27:13][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled protocols: [TLSv1]
+  [DEBUG] [2018-05-17 21:27:13][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+  [DEBUG] [2018-05-17 21:27:13][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Starting handshake
+  [DEBUG] [2018-05-17 21:27:13][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: Shutdown connection
+  [DEBUG] [2018-05-17 21:27:13][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+  [DEBUG] [2018-05-17 21:27:13][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [WARN] [2018-05-17 21:27:13][us.codecraft.webmagic.downloader.HttpClientDownloader]download page https://github.com/code4craft error
+  javax.net.ssl.SSLException: Received fatal alert: protocol_version
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:154)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(SSLSocketImpl.java:2033)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1135)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:394)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:353)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[INFO] [2018-05-17 21:27:14][us.codecraft.webmagic.Spider]Spider github.com closed! 1 pages downloaded.
+  [DEBUG] [2018-05-17 21:27:36][us.codecraft.webmagic.scheduler.QueueScheduler]push to queue https://github.com/code4craft
+  [INFO] [2018-05-17 21:27:37][us.codecraft.webmagic.Spider]Spider github.com started!
+  [DEBUG] [2018-05-17 21:27:37][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: standard
+  [DEBUG] [2018-05-17 21:27:37][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+  [DEBUG] [2018-05-17 21:27:37][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [DEBUG] [2018-05-17 21:27:37][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 5]
+  [DEBUG] [2018-05-17 21:27:37][org.apache.http.impl.execchain.MainClientExec]Opening connection {s}->https://github.com:443
+  [DEBUG] [2018-05-17 21:27:37][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to github.com/192.30.253.112:443
+  [DEBUG] [2018-05-17 21:27:37][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Connecting socket to github.com/192.30.253.112:443 with timeout 10000
+  [DEBUG] [2018-05-17 21:27:38][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled protocols: [TLSv1]
+  [DEBUG] [2018-05-17 21:27:38][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+  [DEBUG] [2018-05-17 21:27:38][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Starting handshake
+  [DEBUG] [2018-05-17 21:27:39][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: Shutdown connection
+  [DEBUG] [2018-05-17 21:27:39][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+  [DEBUG] [2018-05-17 21:27:39][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+  [WARN] [2018-05-17 21:27:39][us.codecraft.webmagic.downloader.HttpClientDownloader]download page https://github.com/code4craft error
+  javax.net.ssl.SSLException: Received fatal alert: protocol_version
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:154)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(SSLSocketImpl.java:2033)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1135)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:394)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:353)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[INFO] [2018-05-17 21:27:40][us.codecraft.webmagic.Spider]Spider github.com closed! 1 pages downloaded.
+  

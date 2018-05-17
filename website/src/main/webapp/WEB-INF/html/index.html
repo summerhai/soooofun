@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>var CONTEXTPATH = "${pageContext.request.contextPath}" </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>有趣-致力营造一个有趣的社区</title>
+    <!--layerui css-->
+    <link href="resource/layui/css/layui.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="resource/AdminLTE-3.0.0-alpha/plugins/font-awesome/css/font-awesome.min.css">
+  <!-- IonIcons -->
+  <link rel="stylesheet" href="resource/AdminLTE-3.0.0-alpha/dist/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="resource/AdminLTE-3.0.0-alpha/dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="resource/AdminLTE-3.0.0-alpha/dist/css/google-font.css" rel="stylesheet">
+
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to to the body tag
+to get the desired effect
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand bg-white border-bottom" style="font-size: 25px">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav" style="margin-left: 35%">
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index3.html" class="nav-link">首页</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">动图</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">投稿</a>
+      </li>
+    </ul>
+
+    <!-- SEARCH FORM -->
+    <form class="form-inline ml-3">
+      <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-navbar" type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+    <!--如果未登陆，显示登陆、注册按钮-->
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto" style="margin-right: 25%">
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index3.html" class="nav-link">注册</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">登陆</a>
+      </li>
+      <!--&lt;!&ndash; Messages Dropdown Menu &ndash;&gt;-->
+      <!--<li class="nav-item dropdown">-->
+        <!--<a class="nav-link" data-toggle="dropdown" href="#">-->
+          <!--<i class="fa fa-comments-o"></i>-->
+          <!--<span class="badge badge-danger navbar-badge">3</span>-->
+        <!--</a>-->
+        <!--<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">-->
+          <!--<a href="#" class="dropdown-item">-->
+            <!--&lt;!&ndash; Message Start &ndash;&gt;-->
+            <!--<div class="media">-->
+              <!--<img src="resource/AdminLTE-3.0.0-alpha/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">-->
+              <!--<div class="media-body">-->
+                <!--<h3 class="dropdown-item-title">-->
+                  <!--Brad Diesel-->
+                  <!--<span class="float-right text-sm text-danger"><i class="fa fa-star"></i></span>-->
+                <!--</h3>-->
+                <!--<p class="text-sm">Call me whenever you can...</p>-->
+                <!--<p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 Hours Ago</p>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; Message End &ndash;&gt;-->
+          <!--</a>-->
+          <!--<div class="dropdown-divider"></div>-->
+          <!--<a href="#" class="dropdown-item">-->
+            <!--&lt;!&ndash; Message Start &ndash;&gt;-->
+            <!--<div class="media">-->
+              <!--<img src="resource/AdminLTE-3.0.0-alpha/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">-->
+              <!--<div class="media-body">-->
+                <!--<h3 class="dropdown-item-title">-->
+                  <!--John Pierce-->
+                  <!--<span class="float-right text-sm text-muted"><i class="fa fa-star"></i></span>-->
+                <!--</h3>-->
+                <!--<p class="text-sm">I got your message bro</p>-->
+                <!--<p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 Hours Ago</p>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; Message End &ndash;&gt;-->
+          <!--</a>-->
+          <!--<div class="dropdown-divider"></div>-->
+          <!--<a href="#" class="dropdown-item">-->
+            <!--&lt;!&ndash; Message Start &ndash;&gt;-->
+            <!--<div class="media">-->
+              <!--<img src="resource/AdminLTE-3.0.0-alpha/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">-->
+              <!--<div class="media-body">-->
+                <!--<h3 class="dropdown-item-title">-->
+                  <!--Nora Silvester-->
+                  <!--<span class="float-right text-sm text-warning"><i class="fa fa-star"></i></span>-->
+                <!--</h3>-->
+                <!--<p class="text-sm">The subject goes here</p>-->
+                <!--<p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 Hours Ago</p>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; Message End &ndash;&gt;-->
+          <!--</a>-->
+          <!--<div class="dropdown-divider"></div>-->
+          <!--<a href="#" class="dropdown-item dropdown-footer">See All Messages</a>-->
+        <!--</div>-->
+      <!--</li>-->
+      <!--&lt;!&ndash; Notifications Dropdown Menu &ndash;&gt;-->
+      <!--<li class="nav-item dropdown">-->
+        <!--<a class="nav-link" data-toggle="dropdown" href="#">-->
+          <!--<i class="fa fa-bell-o"></i>-->
+          <!--<span class="badge badge-warning navbar-badge">15</span>-->
+        <!--</a>-->
+        <!--<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">-->
+          <!--<span class="dropdown-item dropdown-header">15 Notifications</span>-->
+          <!--<div class="dropdown-divider"></div>-->
+          <!--<a href="#" class="dropdown-item">-->
+            <!--<i class="fa fa-envelope mr-2"></i> 4 new messages-->
+            <!--<span class="float-right text-muted text-sm">3 mins</span>-->
+          <!--</a>-->
+          <!--<div class="dropdown-divider"></div>-->
+          <!--<a href="#" class="dropdown-item">-->
+            <!--<i class="fa fa-users mr-2"></i> 8 friend requests-->
+            <!--<span class="float-right text-muted text-sm">12 hours</span>-->
+          <!--</a>-->
+          <!--<div class="dropdown-divider"></div>-->
+          <!--<a href="#" class="dropdown-item">-->
+            <!--<i class="fa fa-file mr-2"></i> 3 new reports-->
+            <!--<span class="float-right text-muted text-sm">2 days</span>-->
+          <!--</a>-->
+          <!--<div class="dropdown-divider"></div>-->
+          <!--<a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>-->
+        <!--</div>-->
+      <!--</li>-->
+      <!--<li class="nav-item">-->
+        <!--<a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i-->
+                <!--class="fa fa-th-large"></i></a>-->
+      <!--</li>-->
+    </ul>
+    <!--如果已经登陆，显示通知、消息和个人头像（个人头像点开下拉是我的主页、设置、退出）-->
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="row" id="funItemContent">
+        <!-- Post -->
+        <!-- /.post -->
+      </div>
+      <div class="row" id="page">
+
+      </div>
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer" style="text-align: center">
+    <!-- To the right -->
+    <div class="float-right d-none d-sm-block-down">
+      Anything you want
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2018 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="resource/AdminLTE-3.0.0-alpha/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="resource/AdminLTE-3.0.0-alpha/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE -->
+<script src="resource/AdminLTE-3.0.0-alpha/dist/js/adminlte.js"></script>
+<!-- OPTIONAL SCRIPTS -->
+<script src="resource/js/jquery.tmpl.js"></script>
+<script src="resource/js/jquery.page.js"></script>
+<script src="resource/script/main.js"></script>
+<script src="resource/script/nice.js"></script>
+<script src="resource/layui/layui.js"></script>
+<script id='funItemTmpl'  type='text/x-jquery-tmpl'>
+{{each result}}
+
+<div class="card card-widget" style="width:100%">
+  <div class="card-header">
+    <div class="user-block">
+      <img class="img-circle" src="{{html avatar}}" alt="User Image">
+      <span class="username"><a href="#">{{html userName}}   {{html level}}</a></span>
+      <span class="description">{{html time}}</span>
+    </div>
+    <!-- /.user-block -->
+    <div class="card-tools">
+      <button type="button" class="btn btn-tool" data-widget="remove" title="不感兴趣"><i class="fa fa-times"></i>
+      </button>
+    </div>
+    <!-- /.card-tools -->
+ </div>
+ <!-- /.card-header -->
+ <div class="card-body">
+ <p>
+ {{html title}}
+ </p>
+ <!-- 如果是文字，加p标签，如果是图片，不要加到p里-->
+  <p>
+  {{html content}}
+  </p>
+
+  <p>
+    <a href="#" class="link-black text-sm mr-2"><i class="fa fa-share mr-1"></i> 分享</a>
+    <a href="#" class="link-black text-sm mr-2"><i class="fa fa-share mr-1"></i>{{html collectNum}}收藏</a>
+    <a href="javascript:void(0);" class="link-black text-sm nice" data-type="0" data-userId="{{html userId}}" data-itemId="{{html id}}" data-hasNiced="true" id="nice_{{html id}}" style="color:#C20C0C"><i class="fa fa-thumbs-o-up mr-1"></i>{{html niceNum}}</a>
+    <span class="float-right">
+      <a href="#" class="link-black text-sm"><i class="fa fa-thumbs-o-up mr-1"></i> 标签1</a>
+      <a href="#" class="link-black text-sm"><i class="fa fa-thumbs-o-up mr-1"></i> 标签2</a>
+      <a href="#" class="link-black text-sm">
+        <i class="fa fa-comments-o mr-1"></i>评论({{html commentNum}})
+      </a>
+    </span>
+  </p>
+ </div>
+ <!-- /.card-body -->
+ <div class="card-footer card-comments">
+  <div class="card-comment">
+    <!-- User image -->
+    <img class="img-circle img-sm" src="{{html avatar}}" alt="User Image">
+    <div class="comment-text">
+      <span class="username"> 张三<span class="text-muted float-right">2018-04-28 23:00:01</span>
+      </span>
+      <!-- /.username -->
+      评论测试
+    </div>
+    <!-- /.comment-text -->
+  </div>
+  <!-- /.card-comment -->
+  <div class="card-comment">
+    <!-- User image -->
+    <img class="img-circle img-sm" src="{{html avatar}}" alt="User Image">
+    <div class="comment-text">
+      <span class="username"> 李四<span class="text-muted float-right">2018-04-28 23:00:01</span>
+      </span>
+      <!-- /.username -->
+      评论测试
+    </div>
+    <!-- /.comment-text -->
+  </div>
+    <!-- /.card-comment -->
+  </div>
+  <!-- /.card-footer -->
+  <div class="card-footer">
+    <form action="#" method="post">
+      <img class="img-fluid img-circle img-sm" src="{{html avatar}}" alt="Alt Text">
+      <!-- .img-push is used to add margin to elements next to floating images -->
+      <div class="img-push">
+        <input type="text" class="form-control form-control-sm" placeholder="请输入评论">
+      </div>
+    </form>
+  </div>
+  <!-- /.card-footer -->
+</div>
+<!-- /.card -->
+{{/each}}
+</script>
+</body>
+</html>

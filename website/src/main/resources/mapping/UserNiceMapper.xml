@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.soooofun.dao.UserNiceMapper">
+  <resultMap id="BaseResultMap" type="com.soooofun.pojo.UserNice">
+    <id column="id" jdbcType="CHAR" property="id" />
+    <result column="n_u_id" jdbcType="CHAR" property="nUId" />
+    <result column="n_item_id" jdbcType="CHAR" property="nItemId" />
+    <result column="nice_type" jdbcType="SMALLINT" property="niceType" />
+    <result column="nice_time" jdbcType="TIMESTAMP" property="niceTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, n_u_id, n_item_id, nice_type, nice_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_nice
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <select id="selectUserNice" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user_nice
+    where n_u_id = #{userId,jdbcType=CHAR} and n_item_id = #{itemId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from user_nice
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.soooofun.pojo.UserNice">
+    insert into user_nice (id, n_u_id, n_item_id, nice_type, 
+      nice_time)
+    values (#{id,jdbcType=CHAR}, #{nUId,jdbcType=CHAR}, #{nItemId,jdbcType=CHAR}, #{niceType,jdbcType=SMALLINT}, 
+      #{niceTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.soooofun.pojo.UserNice">
+    insert into user_nice
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="nUId != null">
+        n_u_id,
+      </if>
+      <if test="nItemId != null">
+        n_item_id,
+      </if>
+      <if test="niceType != null">
+        nice_type,
+      </if>
+      <if test="niceTime != null">
+        nice_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="nUId != null">
+        #{nUId,jdbcType=CHAR},
+      </if>
+      <if test="nItemId != null">
+        #{nItemId,jdbcType=CHAR},
+      </if>
+      <if test="niceType != null">
+        #{niceType,jdbcType=SMALLINT},
+      </if>
+      <if test="niceTime != null">
+        #{niceTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.soooofun.pojo.UserNice">
+    update user_nice
+    <set>
+      <if test="nUId != null">
+        n_u_id = #{nUId,jdbcType=CHAR},
+      </if>
+      <if test="nItemId != null">
+        n_item_id = #{nItemId,jdbcType=CHAR},
+      </if>
+      <if test="niceType != null">
+        nice_type = #{niceType,jdbcType=SMALLINT},
+      </if>
+      <if test="niceTime != null">
+        nice_time = #{niceTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.soooofun.pojo.UserNice">
+    update user_nice
+    set n_u_id = #{nUId,jdbcType=CHAR},
+      n_item_id = #{nItemId,jdbcType=CHAR},
+      nice_type = #{niceType,jdbcType=SMALLINT},
+      nice_time = #{niceTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.soooofun.dao.FunItemMapper">
+  <resultMap id="BaseResultMap" type="com.soooofun.pojo.FunItem">
+    <id column="f_id" jdbcType="CHAR" property="fId" />
+    <result column="f_title" jdbcType="VARCHAR" property="fTitle" />
+    <result column="f_content" jdbcType="VARCHAR" property="fContent" />
+    <result column="f_publish_time" jdbcType="TIMESTAMP" property="fPublishTime" />
+    <result column="f_publisher_id" jdbcType="CHAR" property="fPublisherId" />
+    <result column="f_publisher_name" jdbcType="VARCHAR" property="fPublisherName" />
+    <result column="f_has_image" jdbcType="SMALLINT" property="fHasImage" />
+    <result column="f_class" jdbcType="VARCHAR" property="fClass" />
+    <result column="f_tag" jdbcType="VARCHAR" property="fTag" />
+    <result column="f_nice_num" jdbcType="INTEGER" property="fNiceNum" />
+    <result column="f_comment_num" jdbcType="INTEGER" property="fCommentNum" />
+    <result column="f_score" jdbcType="DOUBLE" property="fScore" />
+    <result column="f_collect_num" jdbcType="INTEGER" property="fCollectNum" />
+    <result column="f_available" jdbcType="SMALLINT" property="fAvailable" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    f_id, f_title, f_content, f_publish_time, f_publisher_id, f_publisher_name, f_has_image, 
+    f_class, f_tag, f_nice_num, f_comment_num, f_score, f_collect_num, f_available
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from fun_item
+    where f_id = #{fId,jdbcType=CHAR}
+  </select>
+  <select id="selectFunItemNum" parameterType="java.lang.String" resultType="java.lang.Integer">
+    select count(f_id)
+    from fun_item
+  </select>
+  <select id="selectListByPage" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from fun_item
+    <if test="orderType == 'nice'">
+      ORDER BY f_nice_num DESC
+    </if>
+    <if test="orderType == 'time'">
+      ORDER BY f_publish_time DESC
+    </if>
+    limit #{pageNum},#{itemNum}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from fun_item
+    where f_id = #{fId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.soooofun.pojo.FunItem">
+    insert into fun_item (f_id, f_title, f_content, 
+      f_publish_time, f_publisher_id, f_publisher_name, 
+      f_has_image, f_class, f_tag, 
+      f_nice_num, f_comment_num, f_score, 
+      f_collect_num, f_available)
+    values (#{fId,jdbcType=CHAR}, #{fTitle,jdbcType=VARCHAR}, #{fContent,jdbcType=VARCHAR}, 
+      #{fPublishTime,jdbcType=TIMESTAMP}, #{fPublisherId,jdbcType=CHAR}, #{fPublisherName,jdbcType=VARCHAR}, 
+      #{fHasImage,jdbcType=SMALLINT}, #{fClass,jdbcType=VARCHAR}, #{fTag,jdbcType=VARCHAR}, 
+      #{fNiceNum,jdbcType=INTEGER}, #{fCommentNum,jdbcType=INTEGER}, #{fScore,jdbcType=DOUBLE}, 
+      #{fCollectNum,jdbcType=INTEGER}, #{fAvailable,jdbcType=SMALLINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.soooofun.pojo.FunItem">
+    insert into fun_item
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="fId != null">
+        f_id,
+      </if>
+      <if test="fTitle != null">
+        f_title,
+      </if>
+      <if test="fContent != null">
+        f_content,
+      </if>
+      <if test="fPublishTime != null">
+        f_publish_time,
+      </if>
+      <if test="fPublisherId != null">
+        f_publisher_id,
+      </if>
+      <if test="fPublisherName != null">
+        f_publisher_name,
+      </if>
+      <if test="fHasImage != null">
+        f_has_image,
+      </if>
+      <if test="fClass != null">
+        f_class,
+      </if>
+      <if test="fTag != null">
+        f_tag,
+      </if>
+      <if test="fNiceNum != null">
+        f_nice_num,
+      </if>
+      <if test="fCommentNum != null">
+        f_comment_num,
+      </if>
+      <if test="fScore != null">
+        f_score,
+      </if>
+      <if test="fCollectNum != null">
+        f_collect_num,
+      </if>
+      <if test="fAvailable != null">
+        f_available,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="fId != null">
+        #{fId,jdbcType=CHAR},
+      </if>
+      <if test="fTitle != null">
+        #{fTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="fContent != null">
+        #{fContent,jdbcType=VARCHAR},
+      </if>
+      <if test="fPublishTime != null">
+        #{fPublishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fPublisherId != null">
+        #{fPublisherId,jdbcType=CHAR},
+      </if>
+      <if test="fPublisherName != null">
+        #{fPublisherName,jdbcType=VARCHAR},
+      </if>
+      <if test="fHasImage != null">
+        #{fHasImage,jdbcType=SMALLINT},
+      </if>
+      <if test="fClass != null">
+        #{fClass,jdbcType=VARCHAR},
+      </if>
+      <if test="fTag != null">
+        #{fTag,jdbcType=VARCHAR},
+      </if>
+      <if test="fNiceNum != null">
+        #{fNiceNum,jdbcType=INTEGER},
+      </if>
+      <if test="fCommentNum != null">
+        #{fCommentNum,jdbcType=INTEGER},
+      </if>
+      <if test="fScore != null">
+        #{fScore,jdbcType=DOUBLE},
+      </if>
+      <if test="fCollectNum != null">
+        #{fCollectNum,jdbcType=INTEGER},
+      </if>
+      <if test="fAvailable != null">
+        #{fAvailable,jdbcType=SMALLINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.soooofun.pojo.FunItem">
+    update fun_item
+    <set>
+      <if test="fTitle != null">
+        f_title = #{fTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="fContent != null">
+        f_content = #{fContent,jdbcType=VARCHAR},
+      </if>
+      <if test="fPublishTime != null">
+        f_publish_time = #{fPublishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fPublisherId != null">
+        f_publisher_id = #{fPublisherId,jdbcType=CHAR},
+      </if>
+      <if test="fPublisherName != null">
+        f_publisher_name = #{fPublisherName,jdbcType=VARCHAR},
+      </if>
+      <if test="fHasImage != null">
+        f_has_image = #{fHasImage,jdbcType=SMALLINT},
+      </if>
+      <if test="fClass != null">
+        f_class = #{fClass,jdbcType=VARCHAR},
+      </if>
+      <if test="fTag != null">
+        f_tag = #{fTag,jdbcType=VARCHAR},
+      </if>
+      <if test="fNiceNum != null">
+        f_nice_num = #{fNiceNum,jdbcType=INTEGER},
+      </if>
+      <if test="fCommentNum != null">
+        f_comment_num = #{fCommentNum,jdbcType=INTEGER},
+      </if>
+      <if test="fScore != null">
+        f_score = #{fScore,jdbcType=DOUBLE},
+      </if>
+      <if test="fCollectNum != null">
+        f_collect_num = #{fCollectNum,jdbcType=INTEGER},
+      </if>
+      <if test="fAvailable != null">
+        f_available = #{fAvailable,jdbcType=SMALLINT},
+      </if>
+    </set>
+    where f_id = #{fId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.soooofun.pojo.FunItem">
+    update fun_item
+    set f_title = #{fTitle,jdbcType=VARCHAR},
+      f_content = #{fContent,jdbcType=VARCHAR},
+      f_publish_time = #{fPublishTime,jdbcType=TIMESTAMP},
+      f_publisher_id = #{fPublisherId,jdbcType=CHAR},
+      f_publisher_name = #{fPublisherName,jdbcType=VARCHAR},
+      f_has_image = #{fHasImage,jdbcType=SMALLINT},
+      f_class = #{fClass,jdbcType=VARCHAR},
+      f_tag = #{fTag,jdbcType=VARCHAR},
+      f_nice_num = #{fNiceNum,jdbcType=INTEGER},
+      f_comment_num = #{fCommentNum,jdbcType=INTEGER},
+      f_score = #{fScore,jdbcType=DOUBLE},
+      f_collect_num = #{fCollectNum,jdbcType=INTEGER},
+      f_available = #{fAvailable,jdbcType=SMALLINT}
+    where f_id = #{fId,jdbcType=CHAR}
+  </update>
+</mapper>
